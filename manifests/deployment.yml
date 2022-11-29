@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: javaspring 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javaspring
+  template:
+    metadata:
+      labels:
+        app: javaspring 
+    spec:
+      containers:
+        - name: javaspring 
+          image: acrnewdemo123.azurecr.io/javaspring
+          ports:
+          - containerPort: 80
